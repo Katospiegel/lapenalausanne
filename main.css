@@ -3,9 +3,9 @@
   }
   
   .column_calendar {
-    flex: 75%;
+    flex: 85%;
   }
 
   .column {
-    flex: 25%;
+    flex: 15%;
   }
