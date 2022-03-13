@@ -45,16 +45,16 @@
         console.log(data);
         var calendar = new FullCalendar.Calendar(calendarEl, {
         //timeZone: 'UTC',
-        height: 800,
+        height: 900,
         events: data,
-        initialDate: '2021-11-07',
+        //initialDate: '2021-11-07',
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
         // initialView: 'listWeek',
-        themeSystem: 'bootstrap',
+        themeSystem: 'darkly', //bootstrap
         initialView: 'dayGridMonth',
         // eventRender:   function eventRender(event, element, view) {
         //     return ['all', event.cName].indexOf(document.getElementById('type_selector').val()) >= 0;}
@@ -63,13 +63,28 @@
               this.changeView("timeGridDay",info.dateStr);
           }
         }, 
-        eventMouseEnter: function( mouseEnterInfo ) { 
-          var dd = data[ parseInt(mouseEnterInfo.event.id)];
-          document.getElementById("img").src = dd.image;
-          document.getElementById("title").textContent = dd.title;
-          //console.log(dd);
-          document.getElementById("description").textContent = dd.description;
-        }
+        // eventMouseEnter: function( mouseEnterInfo ) { 
+        //   var dd = data[ parseInt(mouseEnterInfo.event.id)];
+        //   document.getElementById("img").src = dd.image;
+        //   document.getElementById("title").textContent = dd.title;
+        //   //console.log(dd);
+        //   document.getElementById("description").textContent = dd.description;
+        // },
+
+        eventClick: function(info) {
+        info.jsEvent.preventDefault(); // don't let the browser navigate
+
+        var dd = data[ parseInt(info.event.id)];
+        document.getElementById("img").src = dd.image;
+        document.getElementById("title").textContent = dd.title;
+        //console.log(dd);
+        document.getElementById("description").textContent = dd.description;
+
+        // if (info.event.url) {
+        //   window.open(info.event.url);
+        // }
+      }
+
       });
       calendar.render();
 
@@ -85,7 +100,8 @@
 
     </script>
   </head>
-  <body>
+  <body class="mainbody">
+
 <!--   <div align='center'>
     <select id="type_selector">
       <option value="all">All types</option>
@@ -94,11 +110,15 @@
       <option value="zinema">Zinema</option>
       <option value="salopard">Salopard</option>
   </select> -->
+<div>
+
+<center><h1 class="maintitle">Lapena Lausanne</h1></center>
+<center><h2 class="subtitle">Agenda sousterrain</h2></center>
 
 </div>
 <div class="row">
   <div class="column_calendar" id='calendar' style="max-width: 1100px;margin: 40px auto; padding: 40px"></div>
-  <div class="column"><img id='img' width='400px' src=''> <h2 id='title'></h2><p id='description'></p></div>
+  <div class="column"><img id='img' width='300px' src=''> <h2 id='title'></h2><p id='description'></p></div>
 </div>
 
     
