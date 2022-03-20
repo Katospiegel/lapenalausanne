@@ -1,20 +1,27 @@
 .row {
+	width: 95hw;
     display: flex;
+	flex-direction: row;
   }
   
   .column_calendar {
-    flex: 85%;
+    flex: 80%;
+	padding:10px;
   }
 
   .column {
     flex: 15%;
+	padding: 10px;
+	align-items: left;
   }
 
 .mainbody{
-  background-color: #85FFBD;
-  background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
-  
-  
+	background: -webkit-linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%); /* Chrome 10+, Saf5.1+ */ background: -moz-linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%); /* FF3.6+ */ background: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%); /* W3C */
+}
+
+.header{
+	padding: 10px;
+	margin-top:30px;
 }
 
 /* .maintitle{
@@ -24,3 +31,7 @@
 .subtitle{
   align: center;
 } */
+
+footer{
+	padding: 10px;
+}
