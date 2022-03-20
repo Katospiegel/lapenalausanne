@@ -1,16 +1,16 @@
 .row {
 	width: 95hw;
-    display: flex;
+  display: flex;
 	flex-direction: row;
   }
   
   .column_calendar {
-    flex: 80%;
+  flex: 80%;
 	padding:10px;
   }
 
   .column {
-    flex: 15%;
+  flex: 15%;
 	padding: 10px;
 	align-items: left;
   }
@@ -34,4 +34,25 @@
 
 footer{
 	padding: 10px;
+}
+
+
+@media screen and (max-width: 500px) {
+  /* comes into effect for screens less than or equal to 320 pixels */
+  .row {
+    width: 95hw;
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .column_calendar {
+    flex: 80%;
+    padding:10px;
+    }
+  
+    .column {
+    flex: 15%;
+    padding: 10px;
+    align-items: center;
+    }
 }
