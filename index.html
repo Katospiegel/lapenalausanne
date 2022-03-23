@@ -6,6 +6,7 @@
     <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>  
     <link href='lib/main.css' rel='stylesheet' />
     <link href='main.css' rel='stylesheet' />
+    <link rel="shortcut icon" type="image/jpg" href="favicon/favicon.ico"/>
     <script src='lib/main.js'></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E57BQSEY0M"></script>
@@ -51,7 +52,7 @@
 
       var calendarEl = document.getElementById('calendar');
 
-      await readTextFile("events.json?124", function(text){
+      await readTextFile("events.json?125", function(text){
         var data = JSON.parse(text); 
         console.log(data);
         var calendar = new FullCalendar.Calendar(calendarEl, {
